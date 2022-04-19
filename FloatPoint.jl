@@ -1,0 +1,30 @@
+
+function toDecimal(binary)
+    binary = split(binary, " ")
+    e = digits(parse(Int, binary[2]))
+    m = digits(parse(BigInt, binary[3]))
+
+    𝔢 = 0
+    ℯ = 0
+    𝔣 = 0
+
+    for bit in e
+        𝔢 += bit * (2^ℯ)
+        ℯ += 1
+    end
+
+    ℯ = 1
+    for bit in reverse(m)
+        if bit != 0
+            𝔣 += (1/2)^ℯ
+        end
+        ℯ += 1
+    end
+
+    return resul = (-1)^0 * 2^(𝔢 - 1023) * (1 + 𝔣)
+end
+
+binary = readline()
+
+println(@time toDecimal(binary))
+
