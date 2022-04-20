@@ -4,7 +4,7 @@ function toDecimal(binary)
     s = digits(parse(Int, binary[1]))[1] 
     e = digits(parse(Int, binary[2]))
     m = digits(parse(BigInt, binary[3]))
-    print(eltype(s))
+
     𝔢 = 0
     ℯ = 0
     𝔣 = 0
